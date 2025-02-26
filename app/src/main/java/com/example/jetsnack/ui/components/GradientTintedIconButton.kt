@@ -65,8 +65,8 @@ fun JetsnackGradientTintedIconButton(
     val modifierColor = if (pressed) {
         Modifier.diagonalGradientTint(
             colors = listOf(
-                JetsnackTheme.colors.textSecondary,
-                JetsnackTheme.colors.textSecondary
+                JetsnackTheme.colors.interactiveSecondary.first(),
+                JetsnackTheme.colors.interactiveSecondary.first()
             ),
             blendMode = blendMode
         )

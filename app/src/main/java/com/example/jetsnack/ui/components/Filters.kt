@@ -24,6 +24,7 @@ import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
@@ -83,7 +84,7 @@ fun FilterBar(
                     ) {
                         Icon(
                             imageVector = Icons.Rounded.FilterList,
-                            tint = JetsnackTheme.colors.brand,
+                            tint = JetsnackTheme.colors.lightOrange,
                             contentDescription = stringResource(R.string.label_filters),
                             modifier = Modifier.diagonalGradientBorder(
                                 colors = JetsnackTheme.colors.interactiveSecondary,
@@ -108,12 +109,12 @@ fun FilterChip(
 ) {
     val (selected, setSelected) = filter.enabled
     val backgroundColor by animateColorAsState(
-        if (selected) JetsnackTheme.colors.brandSecondary else JetsnackTheme.colors.uiBackground,
+        if (selected) JetsnackTheme.colors.lightOrange else JetsnackTheme.colors.uiBackground,
         label = "background color"
     )
-    val border = Modifier.fadeInDiagonalGradientBorder(
-        showBorder = !selected,
-        colors = JetsnackTheme.colors.interactiveSecondary,
+    val border = Modifier.border(
+        width = 2.dp,
+        color = JetsnackTheme.colors.uiBorder,
         shape = shape
     )
     val textColor by animateColorAsState(

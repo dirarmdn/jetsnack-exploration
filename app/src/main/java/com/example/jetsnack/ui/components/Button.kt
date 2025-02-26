@@ -43,6 +43,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.jetsnack.ui.theme.JetsnackTheme
@@ -56,7 +57,7 @@ fun JetsnackButton(
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     shape: Shape = ButtonShape,
     border: BorderStroke? = null,
-    backgroundGradient: List<Color> = JetsnackTheme.colors.interactivePrimary,
+    backgroundBtn: Color = JetsnackTheme.colors.orange,
     disabledBackgroundGradient: List<Color> = JetsnackTheme.colors.interactiveSecondary,
     contentColor: Color = JetsnackTheme.colors.textInteractive,
     disabledContentColor: Color = JetsnackTheme.colors.textHelp,
@@ -71,10 +72,10 @@ fun JetsnackButton(
         modifier = modifier
             .clip(shape)
             .background(
-                Brush.horizontalGradient(
-                    colors = if (enabled) backgroundGradient else disabledBackgroundGradient
-                )
+                if (enabled) SolidColor(backgroundBtn)
+                else Brush.horizontalGradient(disabledBackgroundGradient)
             )
+
             .clickable(
                 onClick = onClick,
                 enabled = enabled,
@@ -102,7 +103,7 @@ fun JetsnackButton(
     }
 }
 
-private val ButtonShape = RoundedCornerShape(percent = 50)
+private val ButtonShape = RoundedCornerShape(percent = 20)
 
 @Preview("default", "round")
 @Preview("dark theme", "round", uiMode = UI_MODE_NIGHT_YES)

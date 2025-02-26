@@ -175,7 +175,7 @@ fun JetsnackBottomBar(
     currentRoute: String,
     navigateToRoute: (String) -> Unit,
     modifier: Modifier = Modifier,
-    color: Color = JetsnackTheme.colors.iconPrimary,
+    color: Color = JetsnackTheme.colors.orange,
     contentColor: Color = JetsnackTheme.colors.iconInteractive
 ) {
     val routes = remember { tabs.map { it.route } }

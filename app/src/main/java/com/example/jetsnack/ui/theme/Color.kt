@@ -80,6 +80,9 @@ val Neutral2 = Color(0x61ffffff)
 val Neutral1 = Color(0xbdffffff)
 val Neutral0 = Color(0xffffffff)
 
+val orange = Color(0xfff4793d)
+val lightOrange = Color(0xFFF9CA48)
+
 val FunctionalRed = Color(0xffd00036)
 val FunctionalRedDark = Color(0xffea6d7e)
 val FunctionalGreen = Color(0xff52c41a)

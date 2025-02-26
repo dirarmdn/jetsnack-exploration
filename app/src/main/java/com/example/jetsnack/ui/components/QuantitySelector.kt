@@ -17,6 +17,7 @@
 package com.example.jetsnack.ui.components
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.provider.CalendarContract.Colors
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -30,6 +31,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -73,7 +75,7 @@ fun QuantitySelector(
                 text = "$it",
                 style = MaterialTheme.typography.titleSmall,
                 fontSize = 18.sp,
-                color = JetsnackTheme.colors.textPrimary,
+                color = Color.Black,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.widthIn(min = 24.dp)
             )

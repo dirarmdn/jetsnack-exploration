@@ -61,6 +61,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
@@ -114,8 +115,10 @@ fun SnackCollection(
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
                     .weight(1f)
-                    .wrapContentWidth(Alignment.Start)
+                    .fillMaxWidth()
+                    .wrapContentWidth(Alignment.CenterHorizontally)
             )
+
             IconButton(
                 onClick = { /* todo */ },
                 modifier = Modifier.align(Alignment.CenterVertically)
@@ -247,7 +250,7 @@ fun SnackItem(
                     color = JetsnackTheme.colors.textSecondary,
                     modifier = Modifier
                         .padding(top = 8.dp)
-                        .wrapContentWidth()
+                        .wrapContentWidth(Alignment.CenterHorizontally)
                         .sharedBounds(
                             rememberSharedContentState(
                                 key = SnackSharedElementKey(
@@ -357,21 +360,8 @@ private fun HighlightSnackItem(
                                 exit = fadeOut(nonSpatialExpressiveSpring()),
                                 resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds()
                             )
-                            .height(100.dp)
+                            .height(50.dp)
                             .fillMaxWidth()
-                            .offsetGradientBackground(
-                                colors = gradient,
-                                width = {
-                                    // The Cards show a gradient which spans 6 cards and
-                                    // scrolls with parallax.
-                                    6 * cardWidthWithPaddingPx
-                                },
-                                offset = {
-                                    val left = index * cardWidthWithPaddingPx
-                                    val gradientOffset = left - (scrollProvider() / 3f)
-                                    gradientOffset
-                                }
-                            )
                     )
 
                     SnackImage(
@@ -419,7 +409,7 @@ private fun HighlightSnackItem(
                             boundsTransform = snackDetailBoundsTransform,
                             resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds()
                         )
-                        .wrapContentWidth()
+                        .wrapContentWidth(Alignment.CenterHorizontally)
                 )
                 Spacer(modifier = Modifier.height(4.dp))
 
@@ -443,7 +433,7 @@ private fun HighlightSnackItem(
                             boundsTransform = snackDetailBoundsTransform,
                             resizeMode = SharedTransitionScope.ResizeMode.ScaleToBounds()
                         )
-                        .wrapContentWidth()
+                        .wrapContentWidth(Alignment.CenterHorizontally)
                 )
             }
         }

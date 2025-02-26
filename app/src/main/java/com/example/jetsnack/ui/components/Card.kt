@@ -34,7 +34,7 @@ import com.example.jetsnack.ui.theme.JetsnackTheme
 fun JetsnackCard(
     modifier: Modifier = Modifier,
     shape: Shape = MaterialTheme.shapes.medium,
-    color: Color = JetsnackTheme.colors.uiBackground,
+    color: Color = JetsnackTheme.colors.lightOrange,
     contentColor: Color = JetsnackTheme.colors.textPrimary,
     border: BorderStroke? = null,
     elevation: Dp = 4.dp,

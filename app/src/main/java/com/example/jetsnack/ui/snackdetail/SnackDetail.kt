@@ -203,7 +203,7 @@ private fun Header(snackId: Long, origin: String) {
         ?: throw IllegalArgumentException("No Scope found")
 
     with(sharedTransitionScope) {
-        val brushColors = JetsnackTheme.colors.tornado1
+        val brushColors = JetsnackTheme.colors.gradient2_2
 
         val infiniteTransition = rememberInfiniteTransition(label = "background")
         val targetOffset = with(LocalDensity.current) {
